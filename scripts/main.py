@@ -34,8 +34,8 @@ Y = ['poesi', 'kunst', 'dans', 'litteratur',  'roman' ,'symfoni', 'drama', 'skul
 #ikke significant
 
 #science arts
-X = ['videnskab', 'teknologi', 'fysik', 'kemi', 'computer', 'eksperiment', 'astronomi', 'biologi'] #Target words for Science
-Y = ['poesi', 'kunst', 'dans', 'litteratur', 'roman', 'symfoni', 'drama', 'skulptur'] #Target words for Arts
+X = ['videnskab', 'teknologi', 'fysik', 'kemi', 'computer', 'eksperiment', 'data', 'biologi', 'mand'] #Target words for Science
+Y = ['poesi', 'kunst', 'dans', 'litteratur', 'roman', 'symfoni', 'drama', 'skulptur', 'kvinde'] #Target words for Arts
 #slet ikke significant
 
 ######################################################################
@@ -46,3 +46,4 @@ Y = ['poesi', 'kunst', 'dans', 'litteratur', 'roman', 'symfoni', 'drama', 'skulp
 #print(results_weat(X, Y, A, B, k_model_fasttext, p))
 print(results_weat(X, Y, A, B, k_model_w2v, p))
 print(results_weat(Z, W, A, B, k_model_w2v, p))
+
