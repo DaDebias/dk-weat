@@ -7,7 +7,7 @@ import pkg_resources
 pkg_resources.require("gensim==3.8.0") 
 
 model_w2v = WordEmbedding('/work/dagw_wordembeddings/word2vec_model/DAGW-model.bin') 
-model_fasttext = WordEmbedding('/work/dagw_wordembeddings/fasttext_model/fasttext.txt', binary=False)
+model_fasttext = WordEmbedding('/work/dagw_wordembeddings/fasttext_model/fasttext.txt');
 #model_w2v = KeyedVectors.load_word2vec_format('/work/dagw_wordembeddings/word2vec_model/DAGW-model.bin', binary=True) 
 #model_fasttext = KeyedVectors.load_word2vec_format('/work/dagw_wordembeddings/fasttext_model/fasttext.txt', binary=False)
 #model_fasttext1 = WordEmbedding('/work/dagw_wordembeddings/fasttext_model/fasttext_vectors.txt')#, binary=False) 
@@ -22,6 +22,6 @@ B = ['kvindelig', 'kvinde', 'pige', 'søster', 'hun', 'hende', 'hendes', 'datter
 X = ['leder', 'ledelse', 'professionel', 'virksomhed', 'løn', 'kontor', 'forretning', 'karriere'] #Target words for Career
 Y = ['hjem','forældre', 'børn', 'familie','bedsteforældre', 'ægteskab', 'bryllup', 'pårørende'] #Target words for Family
 
-print(results_weat(X, Y, A, B, model_fasttext, p))
+print(results_weat(X, Y, A, B, model_fasttext.index, p))
 
-print(results_weat(X, Y, A, B, model_w2v, p))
+print(results_weat(X, Y, A, B, model_w2v.index, p))
