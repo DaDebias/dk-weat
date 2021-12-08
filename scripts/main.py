@@ -20,11 +20,29 @@ p =10000
 #Set target and attribute words - Career vs. Family
 A = ['mandlig', 'mand','dreng','bror','han','ham','hans','søn'] #Attribute words for mand
 B = ['kvindelig', 'kvinde', 'pige', 'søster', 'hun', 'hende', 'hendes', 'datter'] #Attribute words for kvinde
-X = ['leder', 'ledelse', 'professionel', 'virksomhed', 'løn', 'kontor', 'forretning', 'karriere'] #Target words for Career
+X = ['leder', 'bestyrelse', 'professionel', 'virksomhed', 'løn', 'arbejde', 'forretning', 'karriere'] #Target words for Career
 Y = ['hjem','forældre', 'børn', 'familie','bedsteforældre', 'ægteskab', 'bryllup', 'pårørende'] #Target words for Family
 
-print(results_weat(X, Y, A, B, model_fasttext.index, p))
-print(results_weat(X, Y, A, B, model_w2v.index, p))
+#hjemmelavet
+Z = ['stærk', 'beslutsom', 'muskler', 'forsørger', 'helt', 'modig', 'kriger', 'stor'] #Target words for Career
+W = ['svag','kærlig', 'diversitet', 'smuk','lille', 'underdanig', 'kreativ', 'hjemmegående'] #Target words for Family
 
-print(results_weat(X, Y, A, B, k_model_fasttext, p))
+
+#math arts
+X = ['matematik', 'algebra', 'geometri', 'regning', 'ligning', 'beregning', 'tal', 'addition'] #Target words for Math
+Y = ['poesi', 'kunst', 'dans', 'litteratur',  'roman' ,'symfoni', 'drama', 'skulptur'] #Target words for Arts
+#ikke significant
+
+#science arts
+X = ['videnskab', 'teknologi', 'fysik', 'kemi', 'computer', 'eksperiment', 'astronomi', 'biologi'] #Target words for Science
+Y = ['poesi', 'kunst', 'dans', 'litteratur', 'roman', 'symfoni', 'drama', 'skulptur'] #Target words for Arts
+#slet ikke significant
+
+######################################################################
+
+#print(results_weat(X, Y, A, B, model_fasttext.index, p))
+#print(results_weat(X, Y, A, B, model_w2v.index, p))
+
+#print(results_weat(X, Y, A, B, k_model_fasttext, p))
 print(results_weat(X, Y, A, B, k_model_w2v, p))
+print(results_weat(Z, W, A, B, k_model_w2v, p))
