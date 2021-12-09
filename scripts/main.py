@@ -3,7 +3,6 @@ from utility_functions import *
 from viz import restrict_wv
 from gensim.models.keyedvectors import KeyedVectors
 
-
 def weat_func(wordembedding, permutations, male, female, word_list1, word_list2):
     #Set permutations
     p = permutations
