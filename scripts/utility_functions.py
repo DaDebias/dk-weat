@@ -5,6 +5,8 @@ import gensim
 import pandas as pd
 from numpy import dot
 from numpy.linalg import norm
+import sys, os
+sys.path.append(os.path.join('..'))
 
 def cosine_sim(v1, v2, embedding):
     """
@@ -140,4 +142,24 @@ def results_weat(X, Y, A, B, embedding, p):
 
 #Now run the tests for all types of gender biases (science vs. arts, math vs. arts, career vs. family) 
 # + all pre-trained models (separately as computational strain is too big otherwise)
+
+def weat_func(wordembedding, model_name, theme1, theme2, permutations, male, female, word_list1, word_list2):
+    print("running")
+    # set permutations
+    p = permutations
+
+    # set target and attribute words - Career vs. Family
+    sub1 = word_list1
+    sub2 = word_list2
+    
+    # run WEAT
+    results = results_weat(sub1, sub2, male, female, wordembedding, p)
+
+    # get name
+    name = f"WEAT_{theme1}_{theme2}_{model_name}.csv"
+
+    # save results 
+    results.to_csv(os.path.join("/work/Exam/dk-weat/output/", name), index = True)
+
+    return print(results)
 
