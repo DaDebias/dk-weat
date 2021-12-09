@@ -26,11 +26,12 @@ weat_func(model, model_name, "career", "family", 10000, male, female, career, fa
 weat_func(model, model_name, "science", "arts", 10000, male, female, science, arts)
 weat_func(model, model_name, "math", "arts", 10000, male, female, math, arts)
 
-#words_to_plot = set(male)
 
+
+
+#words_to_plot = set(male)
 # restrict embedding
 #restrict_wv(wv = model, restricted_word_set = words_to_plot)
-
 # plot
 #tsne_plot(model)
 
