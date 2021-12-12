@@ -12,6 +12,7 @@ model_name = "word2vec"
 # load model 
 #k_model_fasttext = KeyedVectors.load_word2vec_format('/work/dagw_wordembeddings/fasttext_model/fasttext.txt', binary=False)
 model = KeyedVectors.load_word2vec_format('/work/dagw_wordembeddings/word2vec_model/DAGW-model.bin', binary=True) 
+debiased_model = KeyedVectors.load_word2vec_format('/work/dagw_wordembeddings/word2vec_model/debiased_model.bin', binary=True)
 
 male = ['mandlig', 'mand','dreng','bror','han','ham','hans','søn'] #Attribute words for mand
 female = ['kvindelig', 'kvinde', 'pige', 'søster', 'hun', 'hende', 'hendes', 'datter'] #Attribute words for kvinde
@@ -26,6 +27,9 @@ weat_func(model, model_name, "career", "family", 10000, male, female, career, fa
 weat_func(model, model_name, "science", "arts", 10000, male, female, science, arts)
 weat_func(model, model_name, "math", "arts", 10000, male, female, math, arts)
 
+weat_func(debiased_model, model_name, "career", "family", 10000, male, female, career, family)
+weat_func(debiased_model, model_name, "science", "arts", 10000, male, female, science, arts)
+weat_func(debiased_model, model_name, "math", "arts", 10000, male, female, math, arts)
 
 
 
